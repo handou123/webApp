@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+<meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+">
+
+<link rel="stylesheet" href="css/weui.css">
+<link rel="stylesheet" href="css/jquery-weui.css">
+<link rel="stylesheet" href="css/swiper.css">
+<style>
+        body,html{height: 100%;}
+        header{width: 100%;position: absolute;top: 0;left: 0;z-index: 2;}
+        header .nav{width: 100%;height: 40px;background: #00B600;line-height: 40px;}
+        header .nav h2{text-align: center;color: white;font-size: 22px;}
+        #wrapper{width: 100%;position: absolute;top: 40px;bottom: 50px;left: 0;z-index: 1;overflow: hidden;}
+        #scroller{width: 100%;position: absolute;z-index: 1;}
+        #scroller #content #banner{width: 100%;margin-bottom: 10px;} 
+        #scroller #content #banner img{width: 100%;}
+        #scroller #content .grid-title{margin-bottom: 6px;margin-left: 5%;}
+        #scroller #content .grid-content{margin: 0 5%}
+        
+        /* 第二页 */
+        .nav{width: 100%;background: #00B600;height:40px;position: absolute;top: 0;z-index: 500;text-align: center}
+        .txt{font-size: 22px;padding-top:3px;color:white;font-weight:bold;}
+        /* 第三页 */
+        #scroller #content .title{font-size: 14px;margin-left: 5%;padding: 10px 0 5px;}
+        #scroller #content .list {text-align: center;font-size: 12px;margin: 0 5%;}
+        #scroller #content .load span{font-size: 12px;}
+        #tab3-swiper1 {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            left: 50%;
+            margin-left: -100px;
+            margin-bottom: 10px;
+    }
+    .tab3-slide1 {
+        background-position: center;
+        background-size: cover;
+    }
+
+    #tab3-swiper2 {
+        width: 100%;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        margin-top: 182px;
+    }
+    .tab3-slide2  {
+        background-position: center;
+        background-size: cover;
+        width: 200px;
+        height: 200px;
+
+    }
+    #tab3-swiper3 {
+        width: 200px;
+        height: 200px;
+        padding: 50px;
+    }
+    .tab3-slide3 {
+        background-position: center;
+        background-size: cover;
+        width: 200px;
+        height: 200px;
+    }
+        /*  */
+</style>
+  </head>
+
+  <body ontouchstart>
+
+    <div class="weui-tab">
+      <div class="weui-tab__bd">
+        <div id="tab1" class="weui-tab__bd-item weui-tab__bd-item--active">
+            <header>
+                <div class="nav">
+                    <h2>豆瓣</h2>
+                </div>
+            </header>
+            <div id="wrapper" class="tab1-scroller">
+                    <div id="scroller">
+                        <div id="content">
+                            <!-- 搜索 -->
+                            <div class="page">
+                                    <div class="page__bd">
+                                        <!--<a href="javascript:;" class="weui-btn weui-btn_primary">点击展现searchBar</a>-->
+                                        <div class="weui-search-bar" id="searchBar">
+                                            <form class="weui-search-bar__form">
+                                                <div class="weui-search-bar__box">
+                                                    <i class="weui-icon-search"></i>
+                                                    <input type="search" class="weui-search-bar__input" id="searchInput" placeholder="搜索" required/>
+                                                    <a href="javascript:" class="weui-icon-clear" id="searchClear"></a>
+                                                </div>
+                                                <label class="weui-search-bar__label" id="searchText">
+                                                    <i class="weui-icon-search"></i>
+                                                    <span>搜索</span>
+                                                </label>
+                                            </form>
+                                            <a href="javascript:" class="weui-search-bar__cancel-btn" id="searchCancel">取消</a>
+                                        </div>
+                                    </div>
+                            </div>
+                            <!-- 引用的swiper 轮播效果 -->
+                            <div class="swiper-container" id="banner" >
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide"><img src="images/banner01.jpg" alt="" ></div>
+                                        <div class="swiper-slide"><img src="images/banner02.jpg" alt="" ></div>
+                                        <div class="swiper-slide"><img src="images/banner03.jpg" alt=""></div>
+                                        <div class="swiper-slide"><img src="images/banner04.jpg" alt=""></div>
+                                        <div class="swiper-slide"><img src="images/banner05.jpg" alt=""></div>
+                                    </div>
+                                    <!-- Add Pagination -->
+                                    <div class="pg swiper-pagination"></div>
+                            </div>
+                            <!-- 我的关注 引用九宫格grid-->
+                            <div class="page">
+                                    <div class="grid-title page__hd">
+                                        <p class="page__desc">我的关注</p>
+                                    </div>
+                                    <div class="grid-content weui-grids">
+                                        <a href="javascript:;" class="weui-grid">
+                                            <div class="weui-grid__icon">
+                                                <img src="images/01.jpg" alt="" >
+                                            </div>
+                                            <p class="weui-grid__label">电影</p>
+                                        </a>
+                                        <a href="javascript:;" class="weui-grid">
+                                            <div class="weui-grid__icon">
+                                                <img src="images/02.png" alt="">
+                                            </div>
+                                            <p class="weui-grid__label">电视</p>
+                                        </a>
+                                        <a href="javascript:;" class="weui-grid">
+                                            <div class="weui-grid__icon">
+                                                <img src="images/03.jpg" alt="">
+                                            </div>
+                                            <p class="weui-grid__label">图书</p>
+                                        </a>
+                                        <a href="javascript:;" class="weui-grid">
+                                            <div class="weui-grid__icon">
+                                                <img src="images/04.png" alt="">
+                                            </div>
+                                            <p class="weui-grid__label">同城</p>
+                                        </a>
+                                        <a href="javascript:;" class="weui-grid">
+                                            <div class="weui-grid__icon">
+                                                <img src="images/05.jpg" alt="">
+                                            </div>
+                                            <p class="weui-grid__label">小组</p>
+                                        </a>
+                                        <a href="javascript:;" class="weui-grid">
+                                            <div class="weui-grid__icon">
+                                                <img src="images/06.png" alt="">
+                                            </div>
+                                            <p class="weui-grid__label">音乐</p>
+                                        </a>
+                                        <a href="javascript:;" class="weui-grid">
+                                            <div class="weui-grid__icon">
+                                                <img src="images/07.jpg" alt="">
+                                            </div>
+                                            <p class="weui-grid__label">阅读</p>
+                                        </a>
+                                        <a href="javascript:;" class="weui-grid">
+                                            <div class="weui-grid__icon">
+                                                <img src="images/08.jpg" alt="">
+                                            </div>
+                                            <p class="weui-grid__label">游戏</p>
+                                        </a>
+                                        <a href="javascript:;" class="weui-grid">
+                                            <div class="weui-grid__icon">
+                                                <img src="images/09.png" alt="">
+                                            </div>
+                                            <p class="weui-grid__label">应用</p>
+                                        </a>
+                                    </div>
+                            </div>   
+                        </div>
+                    </div>
+            </div> 
+        </div>
+        <div id="tab2" class="weui-tab__bd-item">
+            <div class="nav">
+                <div class="txt">
+                    豆瓣
+                </div>
+            </div>
+            <div class="list" style="margin-top:-17px;">
+            <div class="weui-pull-to-refresh__layer" style="padding:8px;">
+                <div class='weui-pull-to-refresh__arrow'></div>
+                <div class='weui-pull-to-refresh__preloader'></div>
+                <div class="down">下拉刷新</div>
+                <div class="up">释放刷新</div>
+                <div class="refresh">正在刷新</div>
+            </div>
+            <div class='demos-content-padded'>
+                <article class="weui-article infinite" >
+                    <h1>逃避症患者生存指南</h1>
+                    <section>
+                        <h2 class="title">文/荞麦</h2>
+                        <section class="article-one">
+                            <h3>1</h3>
+                            <p>
+                                中国互联网的年度大促“双十一”不但是全民购物节，对电商行业来说也是每年一度必须上演的大型口水战。
+                                不信？你看中国电商的双寡头阿里、京东哪一年消停了？一会是京东举报阿里垄断，一会是阿里自称是“鸡举报鸭”，
+                                一会是不断爆出的要求品牌商家“二选一”，吃瓜群众买得开心、看得过瘾。
+                            </p>
+                            <p>
+                                <img src="images/3.jpg" alt="">
+                            </p>
+                        </section>
+                        <section>
+                            <h3>2</h3>
+                            <p>
+                                今年火爆的双十一购物节刚刚过去。很多人还沉浸在剁手的快感中。可随着销售数据的不断公布，京东和阿里之间的口水战又起： 
+                                京东方面率先公布了千亿销售数据：从 11月1日 零点到 11月11日7 点，京东下单金额累积达 1000 亿，总耗 10 天 8 小时；
+                                而天猫稍逊一筹，在9点04分才达到千亿销售量，比京东整整晚了两个小时。两个小时不算长，但声势浩大的“天猫双十一”居然让
+                                京东抢了头彩？！天猫当然很不爽，好在随后公布的当天整体数据天猫还是1682亿，算是扳回一城。
+                            </p>
+                            <p>
+                                <img src="images/1.jpg" alt="">
+                            </p>
+                        </section>
+                    </section>
+                </article>
+            </div>
+            <div class="weui-loadmore" style="margin:0 auto 3rem;">
+                <i class="weui-loading"></i>
+                <span class="weui-loadmore__tips">正在加载</span>
+            </div>   
+        </div>          
+        </div>
+        <div id="tab3" class="weui-tab__bd-item ">
+                <header>
+                        <div class="nav">
+                            <h2>豆瓣</h2>
+                        </div>
+                    </header>
+                    <div id="wrapper" class="tab3-scroller">
+                        <div id="scroller">
+                            <div id="content">
+                                <div class="page">
+                                    <div class="title page__hd">
+                                        <p class="page__desc">影院热映</p>
+                                    </div>
+                                    <div id="tab3-swiper1" class="swiper-container">
+                                            <div class="swiper-wrapper">
+                                                <div class="tab3-slide1 swiper-slide" style="background-image:url('images/move-speed8.jpg')"></div>
+                                                <div class="tab3-slide1 swiper-slide" style="background-image:url('images/move-blue.jpg')"></div>
+                                                <div class="tab3-slide1 swiper-slide" style="background-image:url('images/move-look.jpg')"></div>
+                                                <div class="tab3-slide1 swiper-slide" style="background-image:url('images/1.jpg')"></div>
+                                                <div class="tab3-slide1 swiper-slide" style="background-image:url('images/2.jpg')"></div>
+                                            </div>
+                                            <!-- Add Pagination -->
+                                            <div class="tab3-pag1  swiper-pagination"></div>
+                                    </div>
+                                    <div id="tab3-swiper2" class="swiper-container">
+                                        <div class="swiper-wrapper">
+                                            <div class="tab3-slide2 swiper-slide" style="background-image:url('images/move-speed8.jpg')"></div>
+                                            <div class="tab3-slide2 swiper-slide" style="background-image:url('images/move-blue.jpg')"></div>
+                                            <div class="tab3-slide2 swiper-slide" style="background-image:url('images/move-look.jpg')"></div>
+                                            <div class="tab3-slide2 swiper-slide" style="background-image:url('images/1.jpg')"></div>
+                                            <div class="tab3-slide2 swiper-slide" style="background-image:url('images/2.jpg')"></div>
+                                        </div>
+                                        <!-- Add Pagination -->
+                                        <div class="tab3-pag2 swiper-pagination"></div>
+                                    </div>
+                                    <div id="tab3-swiper3" class="swiper-container">
+                                        <div class="swiper-wrapper">
+                                            <div class="tab3-slide3 swiper-slide" style="background-image:url('images/move-speed8.jpg')"></div>
+                                            <div class="tab3-slide3 swiper-slide" style="background-image:url('images/move-blue.jpg')"></div>
+                                            <div class="tab3-slide3 swiper-slide" style="background-image:url('images/move-look.jpg')"></div>
+                                            <div class="tab3-slide3 swiper-slide" style="background-image:url('images/1.jpg')"></div>
+                                            <div class="tab3-slide3 swiper-slide" style="background-image:url('images/2.jpg')"></div>
+                                        </div>
+                                
+                                        <!-- Add Pagination -->
+                                        <div class="tab3-pag3 swiper-pagination"></div>
+                                
+                                        <!-- Add Arrows -->
+                                        <div class="tab3-pre3 swiper-button-prev"></div>
+                                        <div class="tab3-next3 swiper-button-next"></div>
+                                    </div>
+                                </div>
+                                <div class="page">
+                                    <div class="page__bd">
+                                        <div class="load weui-loadmore">
+                                            <i class="weui-loading"></i>
+                                            <span class="weui-loadmore__tips">正在加载</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        </div>
+        <div id="tab4" class="weui-tab__bd-item">
+            <header>
+                <div class="nav">
+                    <h2>豆瓣</h2>
+                </div>
+            </header>
+            <div class="content" style="position:absolute;top:40px;bottom:53px;left:0;text-align:center;width:100%;">
+                <!-- <p class="weui-icon-warn" style="font-size: 4rem;display:block;margin-bottom:1.2rem;"></p>
+                <div class="icon-box__ctn" >
+                    <h3 class="icon-box__title" style="color: #0bb20c;display:block;margin-bottom:1rem;">您还没有登录哦</h3>
+                    <p class="icon-box__desc" style="color: grey;display:block;font-size:12px;margin:0 5%;line-height:20px;">
+                        未登录是无法查看的哦，已有账号赶快去登录，没有账号请先注册后再登录
+                    </p>
+                </div> -->
+                <div class='demos-content-padded' style="width:70%;margin:12px auto 0;">
+                        <!-- <a href="javascript:;" id='show-success' class="weui-btn weui-btn_primary">显示成功</a>
+                        <a href="javascript:;" id='show-error' class="weui-btn weui-btn_primary">显示失败</a> -->
+                        <a href="javascript:;" id='show-warning' class="weui-btn weui-btn_primary">显示警告</a>
+                        <a href="javascript:;" id='show-prompt' class="weui-btn weui-btn_primary">显示 Prompt</a>
+                        <a href="javascript:;" id='show-login' class="weui-btn weui-btn_primary">显示登录弹窗</a>
+                        <a href="javascript:;" id='show-toast-cancel' class="weui-btn weui-btn_primary">显示 Toast 取消</a>
+                        <a href="javascript:;" class="weui-btn weui-btn_primary" id="pb1">只有图片</a>
+                        <a href="javascript:;" id='show-actions' class="weui-btn weui-btn_primary">显示 ActionSheet</a>
+                        <!-- notification通知效果 -->
+                        <a href="javascript:;" id='show-notification' class="weui-btn weui-btn_primary">显示通知</a>
+                </div>
+            </div>
+            
+        </div>
+        <div id="tab5" class="weui-tab__bd-item">
+                <header>
+                    <div class="nav">
+                        <h2>豆瓣</h2>
+                    </div>
+                </header>
+            <div class="weui-cells weui-cells_form" style="margin-top:11px;">
+                <div class="weui-cell">
+                    <div class="weui-cell__hd"><label for="date" class="weui-label">日期</label></div>
+                    <div class="weui-cell__bd">
+                        <input class="weui-input" id="date" type="text">
+                    </div>
+                </div>
+                <div class="weui-cell">
+                    <div class="weui-cell__hd"><label for="date2" class="weui-label">中文</label></div>
+                    <div class="weui-cell__bd">
+                        <input class="weui-input" id="date2" type="text" value="">
+                    </div>
+                </div>
+                <div class="weui-cell">
+                    <div class="weui-cell__hd"><label for="date-multiple" class="weui-label">多选</label></div>
+                    <div class="weui-cell__bd">
+                        <input class="weui-input" id="date-multiple" type="text" value="">
+                    </div>
+                </div>
+            </div>
+                                
+            <div class="demos-header">
+                <h2 class="demos-second-title">内联日历</h2>
+            </div>
+                                
+            <div class="weui-cells weui-cells_form">
+                <div class="weui-cell">
+                    <div class="weui-cell__hd"><label for="date3" class="weui-label">日期</label></div>
+                    <div class="weui-cell__bd">
+                        <input class="weui-input" id="date3" type="text">
+                    </div>
+                </div>
+            </div>
+            <div id="inline-calendar"></div>
+                
+        </div>
+      </div>
+
+      <div class="weui-tabbar">
+        <a href="#tab1" class="weui-tabbar__item weui-bar__item--on">
+          <div class="weui-tabbar__icon">
+                <img src="images/home.png" alt="">
+          </div>
+          <p class="weui-tabbar__label">首页</p>
+        </a>
+        <a href="#tab2" class="weui-tabbar__item">
+          <div class="weui-tabbar__icon">
+            <img src="images/read.png" alt="">
+          </div>
+          <p class="weui-tabbar__label">阅读</p>
+        </a>
+        <a href="#tab3" class="weui-tabbar__item">
+          <div class="weui-tabbar__icon">
+            <img src="images/movie.png" alt="">
+          </div>
+          <p class="weui-tabbar__label">电影</p>
+        </a>
+        <a href="#tab4" class="weui-tabbar__item">
+          <div class="weui-tabbar__icon">
+            <img src="images/user.png" alt="">
+          </div>
+          <p class="weui-tabbar__label">我的</p>
+        </a>
+        <a href="#tab5" class="weui-tabbar__item">
+                <div class="weui-tabbar__icon">
+                  <img src="images/read.png" alt="">
+                </div>
+                <p class="weui-tabbar__label">日历</p>
+              </a>
+      </div>
+    </div>
+
+<script src="js/jquery-2.1.4.js"></script>
+<script src="js/jquery-weui.min.js"></script>
+
+<script src="js/iscroll.js"></script>
+<script src="js/swiper.js"></script>
+<script src="js/swiper1.js"></script>
+<script src="js/weui.min.js"></script>
+<!-- 第一页的 -->
+<script>
+        // 页面滚动效果
+        var myScroll1;
+        myScroll1 = new IScroll('.tab1-scroller', { bounceEasing: 'elastic', bounceTime: 1200 });
+
+        document.addEventListener('touchmove', function (e) { e.preventDefault(); }, isPassive() ? {
+            capture: false,
+            passive: false
+        } : false);
+        function isPassive() {
+            var supportsPassiveOption = false;
+            try {
+                addEventListener("test", null, Object.defineProperty({}, 'passive', {
+                    get: function () {
+                        supportsPassiveOption = true;
+                    }
+                }));
+            } catch(e) {}
+            return supportsPassiveOption;
+        }
+</script>
+<script>
+    //图片轮播效果
+    var swiper = new Swiper('#banner', {
+        pagination: '.pg',
+        paginationClickable: true
+    });
+</script>
+<!-- 第二页的 -->
+<script>
+    // 上拉刷新滚动加载
+        $('.list').pullToRefresh().on('pull-to-refresh', function (done) {
+          var self = this
+          setTimeout(function() {
+            $(self).pullToRefreshDone();
+          }, 2000)
+        })
+        var loading = false;
+        $('.list').infinite().on("infinite", function() {
+          if(loading) return;
+          loading = true;
+          setTimeout(function() {
+            $('article').append("<session><h3>加载的内容</h3></session>");
+            loading = false;
+          }, 2000);
+        });
+</script>
+<!-- 第三页的 -->
+<script>
+    //第一个立方体轮播效果
+        var swiper1 = new Swiper('#tab3-swiper1', {
+            pagination: '.tab3-pag1',
+            effect: 'cube',
+            grabCursor: true,
+            cube: {
+                shadow: true,
+                slideShadows: true,
+                shadowOffset: 20,
+                shadowScale: 0.94
+            }
+        });
+        </script>
+    
+        <script>
+            //第二个立体轮播效果
+            var swiper2 = new Swiper('#tab3-swiper2', {
+                pagination: '.tab3-pag2',
+                effect: 'coverflow',
+                grabCursor: true,
+                centeredSlides: true,
+                slidesPerView: 'auto',
+                coverflow: {
+                    rotate: 50,
+                    stretch: 0,
+                    depth: 100,
+                    modifier: 1,
+                    slideShadows : true
+                }
+            });
+        </script>
+        <script>
+            //第三个 翻转效果
+            var swiper = new Swiper('#tab3-swiper3', {
+                pagination: '.tab3-pag3',
+                effect: 'flip',
+                grabCursor: true,
+                nextButton: '.tab3-next3',
+                prevButton: '.tab3-pre3'
+            });
+        </script>
+        <script>
+                // 页面滚动效果
+                var myScroll2;
+                myScroll2 = new IScroll('.tab3-scroller', { bounceEasing: 'elastic', bounceTime: 1200 });
+        
+                document.addEventListener('touchmove', function (e) { e.preventDefault(); }, isPassive() ? {
+                    capture: false,
+                    passive: false
+                } : false);
+                function isPassive() {
+                    var supportsPassiveOption = false;
+                    try {
+                        addEventListener("test", null, Object.defineProperty({}, 'passive', {
+                            get: function () {
+                                supportsPassiveOption = true;
+                            }
+                        }));
+                    } catch(e) {}
+                    return supportsPassiveOption;
+                }
+        </script>
+<!-- 第四页的 -->
+<script>
+    //TopTip效果按钮
+        $(document)
+        // .on('click', '#show-success', function() {
+        //   $.toptip('操作成功', 'success');
+        // })
+        // .on('click', '#show-error', function() {
+        //   $.toptip('操作失败', 'error');
+        // })
+        .on('click', '#show-warning', function() {
+          $.toptip('警告', 'warning');
+        })
+</script>
+<script>
+//登录注册效果按钮
+    $(document).on("click", "#show-prompt", function() {
+        $.prompt({
+            text: "名字不能超过6个字符，不得出现不和谐文字",
+            title: "输入姓名",
+            onOK: function(text) {
+                $.alert("您的名字是:"+text, "角色设定成功");
+            },
+            onCancel: function() {
+                console.log("取消了");
+            },
+            input: 'Mr Noone'
+        });
+    });
+    $(document).on('click', '#show-login', function() {
+        $.login({
+            title: '登录',
+            text: '请输入用户名和密码',
+            onOK: function (username, password) {
+                console.log(username, password);
+                $.toast('登录成功!');
+            },
+            onCancel: function () {
+                $.toast('取消登录!', 'cancel');
+            }
+        });
+    });
+</script>
+<script>
+//Toast按钮
+    $(document).on("click", "#show-toast-cancel", function() {
+        $.toast("取消操作", "cancel", function(toast) {
+            console.log(toast);
+        });
+    })
+</script>
+<script>
+//photoBrowser效果按钮
+    var pb1 = $.photoBrowser({
+        items: [
+            "images/1.jpg",
+            "images/2.jpg",
+            "images/3.jpg",
+            "images/4.jpg"
+        ],
+           
+        onSlideChange: function(index) {
+            console.log(this, index);
+        },
+           
+        onOpen: function() {
+            console.log("onOpen", this);
+        },
+        onClose: function() {
+            console.log("onClose", this);
+        }
+    });
+    $("#pb1").click(function() {
+        pb1.open();
+    });
+</script>
+<script>
+                //ActionSheet效果按钮
+                    $(document).on("click", "#show-actions", function() {
+                      $.actions({
+                        title: "选择操作",
+                        onClose: function() {
+                          console.log("close");
+                        },
+                        actions: [
+                          {
+                            text: "发布",
+                            className: "color-primary",
+                            onClick: function() {
+                              $.alert("发布成功");
+                            }
+                          },
+                          {
+                            text: "编辑",
+                            className: "color-warning",
+                            onClick: function() {
+                              $.alert("你选择了“编辑”");
+                            }
+                          },
+                          {
+                            text: "删除",
+                            className: 'color-danger',
+                            onClick: function() {
+                              $.alert("你选择了“删除”");
+                            }
+                          }
+                        ]
+                      });
+                    });
+</script>
+<script>
+    //通知notification效果按钮 
+        $(document).on("click", "#show-notification", function() {
+          $.noti({
+            title: "中奖啦！",
+            text: "点击领取腾讯撸啊撸杯二等奖！",
+            media: "<img src='./images/present.png' />",
+            data: {
+              message: "逗你玩的!"
+            },
+            time: 3000,
+            onClick: function(data) {
+              $.alert(data.message);
+            }
+          });
+        });
+      </script>
+
+               <!-- 第五页的 -->
+               <script>
+                   //日历
+                    $("#date").calendar({
+                      onChange: function (p, values, displayValues) {
+                        console.log(values, displayValues);
+                      }
+                    });
+                    $("#date2").calendar({
+                      value: ['2016-12-12'],
+                      dateFormat: 'yyyy年mm月dd日'  // 自定义格式的时候，不能通过 input 的value属性赋值 '2016年12月12日' 来定义初始值，这样会导致无法解析初始值而报错。只能通过js中设置 value 的形式来赋值，并且需要按标准形式赋值（yyyy-mm-dd 或者时间戳)
+                    });
+                    $("#date-multiple").calendar({
+                      multiple: true,
+                      onChange: function (p, values, displayValues) {
+                        console.log(values, displayValues);
+                      }
+                    });
+                    $("#date3").calendar({
+                      container: "#inline-calendar"
+                    });
+                  </script>
+  </body>
+</html>
